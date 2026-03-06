@@ -1,0 +1,74 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Work with me" description="Book a 30-minute call. No obligation, no pitch deck.">
+  <section>
+    <div class="container--narrow">
+      <h1>Work with me</h1>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container">
+      <h2 class="text-center mb-4">How it works</h2>
+      <div class="grid-3">
+        <div class="step card text-center">
+          <span class="step-number">1</span>
+          <h3>Book a call</h3>
+          <p class="text-muted">30-minute introductory conversation. No obligation, no pitch deck.</p>
+        </div>
+        <div class="step card text-center">
+          <span class="step-number">2</span>
+          <h3>We scope the work</h3>
+          <p class="text-muted">I&rsquo;ll send a short proposal with approach, timeline, and cost.</p>
+        </div>
+        <div class="step card text-center">
+          <span class="step-number">3</span>
+          <h3>We get started</h3>
+          <p class="text-muted">Typically within 1&ndash;2 weeks. No drawn-out onboarding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container--narrow">
+      <h2>What to expect</h2>
+      <p>Direct communication, honest assessment &mdash; including &ldquo;AI isn&rsquo;t the answer here&rdquo; when that&rsquo;s the case. I work on day rates, retainers, or project-based engagements depending on what makes sense for you. No lock-in, no bloated teams, no unnecessary complexity.</p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container--narrow text-center">
+      <h2>Get in touch</h2>
+      <p class="mt-2 mb-4">
+        <a href="/contact" class="btn btn--primary">Book a call</a>
+      </p>
+      <p class="text-muted">Or email me directly: <a href="mailto:matt@mattupson.com">matt@mattupson.com</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container--narrow">
+      <h2>Based in Valencia, working globally</h2>
+      <p>I&rsquo;m based in Spain and work remotely with clients across the UK and internationally. You get senior expertise without London overhead. I&rsquo;ve been doing this for years &mdash; remote-first is how I work best.</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+</style>

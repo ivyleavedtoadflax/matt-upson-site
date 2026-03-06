@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+
+const posts = [
+  { title: 'What I learned building an AI consultancy for five years', excerpt: 'Five years of mistakes, lessons, and hard-won insights from co-founding and running MantisNLP.' },
+  { title: 'Questions to ask before hiring an AI vendor', excerpt: 'A practical checklist for non-technical leaders evaluating AI proposals and vendor claims.' },
+  { title: 'What government teams get wrong about AI procurement', excerpt: 'Common delivery anti-patterns in public sector AI, and what to do instead.' },
+  { title: 'The death of hype — what\'s left when the buzz fades', excerpt: 'Separating lasting AI capability from the noise. What actually works after the hype cycle.' },
+  { title: 'Responsible AI in practice, not theory', excerpt: 'Moving beyond principles documents to practical governance that doesn\'t slow you down.' },
+  { title: 'Why your AI strategy probably won\'t work', excerpt: 'The most common failure mode in organisational AI strategy — and how to avoid it.' },
+];
+---
+
+<Base title="Writing" description="Thinking out loud about AI, data, leadership, and government. No hype.">
+  <section>
+    <div class="container--narrow">
+      <h1>Writing</h1>
+      <p class="lead mt-3">Thinking out loud about AI, data, leadership, and government. No hype.</p>
+      <p class="mt-2"><a href="https://reproducible.substack.com" target="_blank" rel="noopener">Subscribe on Substack &rarr;</a></p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container">
+      <div class="grid-2">
+        {posts.map(post => (
+          <article class="card">
+            <p class="text-muted" style="font-size:0.85rem;">Coming soon</p>
+            <h3>{post.title}</h3>
+            <p class="text-muted">{post.excerpt}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container--narrow">
+      <h2>Selected talks</h2>
+      <div class="card mt-3">
+        <h3>All the mistakes I made as a first-time tech lead</h3>
+        <p class="text-muted">PyData &middot; Leadership track</p>
+        <p>An honest talk about the transition from individual contributor to tech leader in AI &mdash; the mistakes, the lessons, and what I&rsquo;d do differently.</p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .lead {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+  }
+</style>

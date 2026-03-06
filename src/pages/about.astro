@@ -1,0 +1,114 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="About" description="The career arc from ecologist to AI consultant — via government, startups, and Valencia.">
+  <section>
+    <div class="container--narrow">
+      <h1>About</h1>
+      <p class="lead mt-3">I&rsquo;ve spent the last decade building AI systems and leading teams in government, not-for-profits, and startups. I co-founded MantisNLP, an NLP consultancy, served as CTO for five years, and now work independently with organisations who need senior AI capability without the overhead of a full-time hire.</p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container--narrow">
+      <h2>The career arc</h2>
+      <ol class="timeline">
+        <li>
+          <span class="timeline-role">Analyst</span>
+          <span class="timeline-org">Cabinet Office</span>
+        </li>
+        <li>
+          <span class="timeline-role">Senior Data Scientist</span>
+          <span class="timeline-org">Department for Education &mdash; pioneered Reproducible Analytical Pipelines</span>
+        </li>
+        <li>
+          <span class="timeline-role">Senior Data Scientist</span>
+          <span class="timeline-org">GDS (Government Digital Service)</span>
+        </li>
+        <li>
+          <span class="timeline-role">Volunteer Data Scientist</span>
+          <span class="timeline-org">DataKind UK</span>
+        </li>
+        <li>
+          <span class="timeline-role">Co-founder &amp; CTO</span>
+          <span class="timeline-org">MantisNLP &mdash; built to profitability over 5 years</span>
+        </li>
+        <li>
+          <span class="timeline-role">Associate</span>
+          <span class="timeline-org">Public Digital &mdash; AI strategy for governments</span>
+        </li>
+        <li class="timeline-now">
+          <span class="timeline-role">Independent AI Consultant</span>
+          <span class="timeline-org">Based in Valencia, Spain</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="container--narrow">
+      <h2>The human stuff</h2>
+      <p>I live in Valencia, Spain with my family. When I&rsquo;m not working, I&rsquo;m usually training for a triathlon, running along the Turia, or trying to improve my Spanish. My career path was unusual &mdash; I started as an ecologist, retrained in data science, and found my way to AI via government. That non-linear route means I bring a different perspective to most AI consultants: I understand research rigour, public interest constraints, and the gap between academic AI and production systems.</p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container--narrow">
+      <h2>Speaking</h2>
+      <p>I speak at conferences about AI leadership, responsible AI, and what actually works when deploying AI in government and mission-driven organisations.</p>
+      <div class="card mt-3">
+        <h3>All the mistakes I made as a first-time tech lead</h3>
+        <p class="text-muted">PyData &middot; Leadership track</p>
+        <p>An honest talk about the transition from individual contributor to tech leader &mdash; the mistakes, the lessons, and what I&rsquo;d do differently.</p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+  }
+
+  .timeline {
+    list-style: none;
+    border-left: 2px solid var(--color-accent);
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .timeline li {
+    position: relative;
+  }
+
+  .timeline li::before {
+    content: '';
+    position: absolute;
+    left: -2.35rem;
+    top: 0.35rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-bg);
+    border: 2px solid var(--color-accent);
+  }
+
+  .timeline-now::before {
+    background: var(--color-accent) !important;
+  }
+
+  .timeline-role {
+    display: block;
+    font-weight: 600;
+  }
+
+  .timeline-org {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+</style>

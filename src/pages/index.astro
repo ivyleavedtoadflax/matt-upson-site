@@ -1,0 +1,95 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Home">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>Senior AI leadership for organisations that need expertise, not hype.</h1>
+      <p class="hero-sub">I help public sector teams, not-for-profits, and growing companies figure out what to do with AI&nbsp;&mdash; and then do it.</p>
+      <a href="/contact" class="btn btn--primary">Book a call</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="alt">
+    <div class="container">
+      <div class="grid-3">
+        <div class="card">
+          <h3>&ldquo;I need to figure out what to do with AI&rdquo;</h3>
+          <p class="text-muted">AI strategy and roadmapping, discovery workshops, feasibility assessments. Honest guidance on what&rsquo;s realistic.</p>
+          <a href="/services">Learn more &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>&ldquo;I need someone senior to lead the AI work&rdquo;</h3>
+          <p class="text-muted">Fractional AI Lead / CTO, embedded technical leadership, team building. Senior expertise without the full-time hire.</p>
+          <a href="/services">Learn more &rarr;</a>
+        </div>
+        <div class="card">
+          <h3>&ldquo;I need an honest outside perspective&rdquo;</h3>
+          <p class="text-muted">Technical due diligence, architecture review, vendor assessment, AI ethics and governance advisory.</p>
+          <a href="/services">Learn more &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Writing -->
+  <section>
+    <div class="container">
+      <h2>Recent writing</h2>
+      <div class="grid-3 mt-3">
+        <article class="card">
+          <p class="text-muted" style="font-size:0.85rem;">Coming soon</p>
+          <h3>What I learned building an AI consultancy</h3>
+          <p class="text-muted">Five years of mistakes, lessons, and hard-won insights from co-founding MantisNLP.</p>
+        </article>
+        <article class="card">
+          <p class="text-muted" style="font-size:0.85rem;">Coming soon</p>
+          <h3>Questions to ask before hiring an AI vendor</h3>
+          <p class="text-muted">A practical checklist for non-technical leaders evaluating AI proposals.</p>
+        </article>
+        <article class="card">
+          <p class="text-muted" style="font-size:0.85rem;">Coming soon</p>
+          <h3>What government teams get wrong about AI</h3>
+          <p class="text-muted">Common procurement and delivery anti-patterns, and what to do instead.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credibility -->
+  <section class="alt">
+    <div class="container text-center">
+      <p class="credibility">Previously: Co-founder &amp; CTO at MantisNLP &middot; Senior Data Scientist at GDS &middot; Department for Education &middot; Cabinet Office</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    padding: 6rem 0 5rem;
+  }
+
+  .hero-inner {
+    max-width: 720px;
+  }
+
+  .hero h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-sub {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+
+  .credibility {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.01em;
+  }
+</style>
