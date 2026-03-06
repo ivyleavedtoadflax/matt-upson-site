@@ -1,5 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const recentPosts = (await getCollection('posts'))
+  .filter(p => !p.data.draft)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 3);
 ---
 
 <Base title="Home">
@@ -40,21 +46,17 @@ import Base from '../layouts/Base.astro';
     <div class="container">
       <h2>Recent writing</h2>
       <div class="grid-3 mt-3">
-        <article class="card">
-          <p class="text-muted" style="font-size:0.85rem;">Coming soon</p>
-          <h3>What I learned building an AI consultancy</h3>
-          <p class="text-muted">Five years of mistakes, lessons, and hard-won insights from co-founding MantisNLP.</p>
-        </article>
-        <article class="card">
-          <p class="text-muted" style="font-size:0.85rem;">Coming soon</p>
-          <h3>Questions to ask before hiring an AI vendor</h3>
-          <p class="text-muted">A practical checklist for non-technical leaders evaluating AI proposals.</p>
-        </article>
-        <article class="card">
-          <p class="text-muted" style="font-size:0.85rem;">Coming soon</p>
-          <h3>What government teams get wrong about AI</h3>
-          <p class="text-muted">Common procurement and delivery anti-patterns, and what to do instead.</p>
-        </article>
+        {recentPosts.map(post => (
+          <a href={`/writing/${post.id}`} class="card-link">
+            <article class="card">
+              <p class="text-muted" style="font-size:0.85rem;">
+                {new Date(post.data.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long' })}
+              </p>
+              <h3>{post.data.title}</h3>
+              <p class="text-muted">{post.data.excerpt}</p>
+            </article>
+          </a>
+        ))}
       </div>
     </div>
   </section>
