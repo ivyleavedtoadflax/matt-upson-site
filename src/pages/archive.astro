@@ -1,0 +1,180 @@
+---
+import Base from '../layouts/Base.astro';
+
+const archive = [
+  {
+    year: 2026,
+    posts: [
+      { title: 'Whitehall Monitor 2026: What it means for digital transformation', url: 'https://www.linkedin.com/pulse/whitehall-monitor-2026-what-means-digital-why-test-learn-upson--syxce', source: 'LinkedIn' },
+    ],
+  },
+  {
+    year: 2025,
+    posts: [
+      { title: "So what's this all about then?", url: 'https://reproducible.substack.com/p/so-whats-this-all-about-then', source: 'Substack' },
+    ],
+  },
+  {
+    year: 2024,
+    posts: [
+      { title: 'Why AI projects go wrong, and what we can do about it', url: 'https://medium.com/mantisnlp/why-projects-go-wrong-and-what-we-can-do-about-it-7d43015cdabe', source: 'Medium' },
+      { title: 'How we\'re thinking about Generative AI: Proprietary vs Open Source', url: 'https://medium.com/mantisnlp/how-were-thinking-about-generative-ai-proprietary-vs-open-source-3c8aff23a82b', source: 'Medium' },
+      { title: 'What role can Generative Artificial Intelligence play for not-for-profits?', url: 'https://medium.com/mantisnlp/what-role-can-generative-artificial-intelligence-play-for-not-for-profits-a2a115bc1a78', source: 'Medium' },
+    ],
+  },
+  {
+    year: 2023,
+    posts: [
+      { title: 'AI for grant funding NGOs: Three ways Artificial Intelligence can help measure impact', url: 'https://medium.com/mantisnlp/ai-for-grant-funding-ngos-three-ways-artificial-intelligence-can-help-measure-impact-5938298a23ce', source: 'Medium' },
+      { title: 'How we think about Generative AI', url: 'https://medium.com/mantisnlp/how-we-think-about-generative-ai-a648e2aeb2cb', source: 'Medium' },
+      { title: 'How not to get left behind by AI', url: 'https://medium.com/mantisnlp/how-not-to-get-left-behind-by-ai-709f547aa5ec', source: 'Medium' },
+      { title: 'Deploy a cutting edge machine learning model with one line of code', url: 'https://medium.com/mantisnlp/deploy-a-cutting-edge-machine-learning-model-with-one-line-of-code-6ac1ad2f2fee', source: 'Medium' },
+      { title: 'ChatGPT for GOV.UK', url: 'https://medium.com/mantisnlp/chatgpt-for-gov-uk-c6f232dae7d', source: 'Medium' },
+      { title: "Why we're switching to Hugging Face Inference Endpoints, and maybe you should too", url: 'https://medium.com/mantisnlp/why-were-switching-to-hugging-face-inference-endpoints-and-maybe-you-should-too-829371dcd330', source: 'Medium' },
+      { title: 'Extracting useful information from documents with Named Entity Recognition', url: 'https://medium.com/mantisnlp/extracting-useful-information-from-documents-with-named-entity-recognition-4e009b60a8c', source: 'Medium' },
+    ],
+  },
+  {
+    year: 2022,
+    posts: [
+      { title: 'Data Version Control for Reproducible Analytical Pipelines', url: 'https://medium.com/mantisnlp/data-version-control-for-reproducible-analytical-pipelines-5255782d355d', source: 'Medium' },
+      { title: 'MLOps for Conversational AI with Rasa, DVC, and CML (Part III)', url: 'https://medium.com/mantisnlp/mlops-for-conversational-ai-with-rasa-dvc-and-cml-part-iii-f56a29c428f3', source: 'Medium' },
+      { title: 'MLOps for Conversational AI with Rasa, DVC, and CML (Part II)', url: 'https://medium.com/mantisnlp/mlops-for-conversational-ai-with-rasa-dvc-and-cml-part-ii-3a70fe2f357d', source: 'Medium' },
+      { title: 'MLOps for Conversational AI with Rasa, DVC, and CML (Part I)', url: 'https://medium.com/mantisnlp/mlops-for-conversational-ai-with-rasa-dvc-and-cml-part-i-beec756e8e7f', source: 'Medium' },
+      { title: 'Finding location entities in Wellcome grants', url: 'https://medium.com/wellcome-data/finding-location-entities-in-wellcome-grants-ec24307afdbd', source: 'Medium', author: 'Arne Robben' },
+    ],
+  },
+  {
+    year: 2020,
+    posts: [
+      { title: 'Re-thinking grant data: a graph approach?', url: 'https://medium.com/wellcome-data/re-thinking-grant-data-a-graph-approach-4b3715657d92', source: 'Medium' },
+      { title: 'Using deep learning to find references in policy documents', url: 'https://medium.com/wellcome-data/using-deep-learning-to-find-references-in-policy-documents-cd3b3f1099e3', source: 'Medium', author: 'Liz Gallagher' },
+    ],
+  },
+  {
+    year: 2018,
+    posts: [
+      { title: 'Why Government needs sustainable software too', url: 'https://www.software.ac.uk/blog/why-government-needs-sustainable-software-too', source: 'SSI' },
+      { title: 'Some takeaways from Git Merge 2018', url: 'https://www.software.ac.uk/blog/some-takeaways-git-merge-2018', source: 'SSI' },
+    ],
+  },
+  {
+    year: 2017,
+    posts: [
+      { title: 'Transforming the process of producing official statistics', url: 'https://dataingovernment.blog.gov.uk/2017/11/27/transforming-the-process-of-producing-official-statistics/', source: 'Data in Government' },
+      { title: 'Reproducible Analytical Pipelines', url: 'https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/', source: 'Data in Government' },
+      { title: 'Dealing with dates', url: 'https://machinegurning.blog/rstats/dates/', source: 'machinegurning' },
+      { title: 'Newyearal Networks', url: 'https://machinegurning.blog/rstats/artificial-neural-networks/', source: 'machinegurning' },
+    ],
+  },
+  {
+    year: 2016,
+    posts: [
+      { title: 'Using machine learning to classify user comments on GOV.UK', url: 'https://dataingovernment.blog.gov.uk/2016/12/20/using-machine-learning-to-classify-user-comments-on-gov-uk/', source: 'Data in Government' },
+      { title: 'Test Driven Development', url: 'https://machinegurning.blog/rstats/test-driven-development/', source: 'machinegurning' },
+      { title: 'map_df()', url: 'https://machinegurning.blog/rstats/map_df/', source: 'machinegurning' },
+      { title: 'Nearest neighbour methods', url: 'https://machinegurning.blog/rstats/nearest_neighbour_classification/', source: 'machinegurning' },
+      { title: "Getting to grips with 'Elements of statistical learning'", url: 'https://machinegurning.blog/rstats/least_squares_and_nearest_neighbours/', source: 'machinegurning' },
+      { title: 'The Hadley Effect', url: 'https://machinegurning.blog/rstats/hadley-effect/', source: 'machinegurning' },
+      { title: 'Iteratively applying models', url: 'https://machinegurning.blog/rstats/iterating/', source: 'machinegurning' },
+      { title: 'Measuring light with a Raspberry Pi', url: 'https://machinegurning.blog/rstats/infographic3/', source: 'machinegurning' },
+      { title: 'Raspberry Pi MQTT broker', url: 'https://machinegurning.blog/iot/minibian/', source: 'machinegurning' },
+      { title: 'IoT with the ESP8266', url: 'https://machinegurning.blog/iot/esp8266/', source: 'machinegurning' },
+      { title: 'Sensing temperature with a Raspberry Pi', url: 'https://machinegurning.blog/rstats/infographic2/', source: 'machinegurning' },
+    ],
+  },
+  {
+    year: 2015,
+    posts: [
+      { title: 'Measuring obsession', url: 'https://www.machinegurning.blog/rstats/infographic1/', source: 'machinegurning' },
+      { title: 'Unsupervised learning with K-means', url: 'https://www.machinegurning.blog/rstats/knn/', source: 'machinegurning' },
+      { title: 'Reproducible journal articles', url: 'https://www.machinegurning.blog/rstats/writing_papers_with_knitr/', source: 'machinegurning' },
+      { title: 'Visualising FAO data', url: 'https://www.machinegurning.blog/rstats/bubble_maps/', source: 'machinegurning' },
+      { title: 'Growing up', url: 'https://www.machinegurning.blog/rstats/R_classes/', source: 'machinegurning' },
+      { title: 'Elastic-net regularisation', url: 'https://www.machinegurning.blog/rstats/glmnet/', source: 'machinegurning' },
+      { title: 'SylvaSense Part II', url: 'https://www.machinegurning.blog/arduino/SylvaSense-2/', source: 'machinegurning' },
+      { title: 'SylvaSense Part I', url: 'https://www.machinegurning.blog/arduino/SylvaSense/', source: 'machinegurning' },
+      { title: 'Regularised linear regression', url: 'https://www.machinegurning.blog/rstats/regularised-linear-regression/', source: 'machinegurning' },
+      { title: 'Too hot to cycle?', url: 'https://www.machinegurning.blog/rstats/cycling-weather/', source: 'machinegurning' },
+      { title: 'Writing a PhD thesis in LaTeX and R', url: 'https://www.machinegurning.blog/rstats/latex-phd/', source: 'machinegurning' },
+      { title: 'Handwriting recognition with logistic regression', url: 'https://www.machinegurning.blog/rstats/handwriting-recognition/', source: 'machinegurning' },
+      { title: 'Non-linear classification with logistic regression', url: 'https://www.machinegurning.blog/rstats/regularised-logistic-regression/', source: 'machinegurning' },
+      { title: 'Implementing vectorised logistic regression', url: 'https://www.machinegurning.blog/rstats/implementing-vectorised-logistic-regression/', source: 'machinegurning' },
+      { title: 'Multivariate linear regression', url: 'https://www.machinegurning.blog/rstats/multivariate_linear_regression/', source: 'machinegurning' },
+      { title: 'Linear regression with gradient descent', url: 'https://www.machinegurning.blog/rstats/linear_regression/', source: 'machinegurning' },
+      { title: 'Gradient descent in R', url: 'https://www.machinegurning.blog/rstats/gradient-descent/', source: 'machinegurning' },
+      { title: 'Finding the right blogging platform', url: 'https://www.machinegurning.blog/rstats/blogging-platforms/', source: 'machinegurning' },
+    ],
+  },
+  {
+    year: 2014,
+    posts: [
+      { title: 'LondonR 2014 - ggvis', url: 'https://www.machinegurning.blog/rstats/ggvis-at-londonR/', source: 'machinegurning' },
+      { title: 'Do women take the scenic route or do men cycle faster?', url: 'https://www.machinegurning.blog/rstats/do-women-take-the-scenic-route/', source: 'machinegurning' },
+      { title: "Is CitiBike an old boy's club?", url: 'https://www.machinegurning.blog/rstats/citiBike-gender/', source: 'machinegurning' },
+    ],
+  },
+];
+---
+
+<Base title="Archive" description="Everything I've written since 2014 — across Medium, Substack, government blogs, and machinegurning.blog.">
+  <section>
+    <div class="container--narrow">
+      <h1>Archive</h1>
+      <p class="lead mt-3">Everything I&rsquo;ve written since 2014 &mdash; across Medium, Substack, government blogs, and my old technical blog. For newer posts hosted here, see <a href="/writing">Writing</a>.</p>
+    </div>
+  </section>
+
+  {archive.map(group => (
+    <section class={group.year % 2 === 0 ? 'alt' : ''}>
+      <div class="container--narrow">
+        <h2>{group.year}</h2>
+        <ul class="archive-list">
+          {group.posts.map(post => (
+            <li>
+              <a href={post.url} target="_blank" rel="noopener">{post.title}</a>
+              <span class="source">{post.source}{post.author ? ` \u00b7 ${post.author}` : ''}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  ))}
+</Base>
+
+<style>
+  .lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+  }
+
+  .lead a {
+    color: var(--color-accent);
+  }
+
+  .archive-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .archive-list a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .archive-list a:hover {
+    color: var(--color-accent);
+  }
+
+  .source {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+</style>

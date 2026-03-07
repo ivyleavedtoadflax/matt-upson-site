@@ -64,6 +64,28 @@ import Base from '../layouts/Base.astro';
       </div>
     </div>
   </section>
+
+  <section>
+    <div class="container--narrow">
+      <h2>More</h2>
+      <div class="more-links">
+        <a href="/archive" class="card-link">
+          <div class="card">
+            <h3>Blog archive</h3>
+            <p class="text-muted">Everything I&rsquo;ve written since 2014 &mdash; across Medium, Substack, government blogs, and machinegurning.blog.</p>
+            <span class="read-more">View archive &rarr;</span>
+          </div>
+        </a>
+        <a href="/papers" class="card-link">
+          <div class="card">
+            <h3>Academic papers</h3>
+            <p class="text-muted">Publications in data science, agroforestry, and soil carbon from my previous life as an ecologist.</p>
+            <span class="read-more">View papers &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 </Base>
 
 <style>
@@ -109,6 +131,29 @@ import Base from '../layouts/Base.astro';
 
   .timeline-org {
     color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .more-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .more-links {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .read-more {
+    color: var(--color-accent);
+    font-weight: 500;
     font-size: 0.95rem;
   }
 </style>

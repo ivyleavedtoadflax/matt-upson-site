@@ -1,0 +1,126 @@
+---
+import Base from '../layouts/Base.astro';
+
+const sections = [
+  {
+    heading: 'Data & AI',
+    papers: [
+      {
+        citation: 'F. Mureddu, D. Osimo, A. Kenny, M. Upson, and V. Peristeras, "Fostering a Data-Centric Public Administration: Strategies, Policy Models and Technologies," in Scientific Foundations of Digital Governance and Transformation, Y. Charalabidis, L. S. Flak, and G. Viale Pereira, Eds., Public Administration and Information Technology, vol. 38, Springer, Cham, 2022.',
+        url: 'https://doi.org/10.1007/978-3-030-92945-9_9',
+      },
+      {
+        citation: 'O. Abbott, P. Lee, M. Upson, M. Gregory, and D. Duhaney, "Blending Data Science and Statistics across Government," in Statistical Data Science, pp. 155\u2013165, 2018.',
+        url: 'https://doi.org/10.1142/9781786345400_0010',
+      },
+    ],
+  },
+  {
+    heading: 'Forestry & Agroforestry',
+    papers: [
+      {
+        citation: 'S. Garc\u00eda de Jal\u00f3n, A. Graves, J. H. N. Palma, A. Williams, M. Upson, and P. J. Burgess, "Modelling and valuing the environmental impacts of arable, forestry and agroforestry systems: a case study," Agroforestry Systems, vol. 92, pp. 1059\u20131073, Aug. 2018.',
+        url: 'https://dspace.lib.cranfield.ac.uk/bitstream/handle/1826/13170/Modelling_and_valuing_environmental_impacts-2018.pdf',
+      },
+      {
+        citation: 'D. A. Fornara, R. Olave, P. Burgess, A. Delmer, M. Upson, and J. McAdam, "Land use change and soil carbon pools: Evidence from a long-term silvopastoral experiment," Agroforestry Systems, vol. 92, pp. 1035\u20131046, Aug. 2018.',
+        url: 'https://core.ac.uk/download/pdf/220181609.pdf',
+      },
+      {
+        citation: 'J. H. N. Palma et al., "Integrating belowground carbon dynamics into Yield-SAFE, a parameter sparse agroforestry model," Agroforestry Systems, vol. 92, pp. 1047\u20131057, Aug. 2018.',
+        url: 'https://dspace.lib.cranfield.ac.uk/bitstream/handle/1826/13171/Integrating_belowground_carbon_dynamics-2018.pdf',
+      },
+      {
+        citation: 'D. A. Fornara, R. Olave, P. Burgess, A. Delmer, M. Upson, and J. McAdam, "Land use change and soil carbon pools: Evidence from a long-term silvopastoral," Springer, Sept. 23, 2017.',
+        url: 'https://dspace.lib.cranfield.ac.uk/bitstream/handle/1826/12504/Land_use_change_and_soil_carbon_pools-2017.pdf',
+      },
+      {
+        citation: 'M. A. Upson, P. J. Burgess, and J. I. L. Morison, "Soil carbon changes after establishing woodland and agroforestry trees in a grazed pasture," Geoderma, vol. 283, pp. 10\u201320, Dec. 2016.',
+        url: 'https://dspace.lib.cranfield.ac.uk/bitstream/handle/1826/10118/Soil_carbon_changes_after_establishing_woodland_and_agroforestry-2016.pdf',
+      },
+      {
+        citation: 'G. Moreno et al., Agroforestry systems of high natural and cultural value in Europe: constraints, challenges and proposal for the future, pp. 24\u201327, 2016.',
+      },
+      {
+        citation: 'G. Moreno et al., Challenges and potential innovations to improve the resilience European wood-pastures, presented at the World Congress Silvo-Pastoral Systems, Sept. 2016.',
+      },
+      {
+        citation: 'P. J. Burgess, A. R. Graves, J. H. N. Palma, J. Crous-Duran, and M. Upson, Financial and economic benefits of integrated crop-livestock-tree systems in Europe, presented at the World Congress on Integrated Crop-Livestock-Tree Systems, Jul. 14, 2015.',
+      },
+      {
+        citation: 'M. den Herder et al., Preliminary stratification and quantification of agroforestry in Europe, AGFORWARD Project, 2014.',
+        url: 'https://www.researchgate.net/profile/Michael-Den-Herder/publication/265111213_Preliminary_stratification_and_quantification_of_agroforestry_in_Europe/links/540fbed10cf2f2b29a3c9b3d/Preliminary-stratification-and-quantification-of-agroforestry-in-Europe.pdf',
+      },
+      {
+        citation: 'M. A. Upson, The carbon storage benefits of agroforestry and farm woodlands, Ph.D. dissertation, Cranfield University, 2014.',
+        url: 'https://dspace.lib.cranfield.ac.uk/bitstream/handle/1826/8616/Matthew_Upson_Thesis_2014.pdf',
+      },
+      {
+        citation: 'M. A. Upson and P. J. Burgess, "Soil organic carbon and root distribution in a temperate arable agroforestry system," Plant and Soil, vol. 373, pp. 43\u201358, Dec. 2013.',
+        url: 'https://link.springer.com/article/10.1007/s11104-013-1766-0',
+      },
+      {
+        citation: 'B. Mayle, R. Harmer, A. Kewitt, A. Peace, N. Straw, D. Williams, and M. Upson, The impacts of feral boar on woodland flora and fauna in Great Britain, Julius-K\u00fchn-Archiv, no. 432, pp. 219, Oct. 2011.',
+        url: 'https://core.ac.uk/download/pdf/33728091.pdf',
+      },
+    ],
+  },
+];
+---
+
+<Base title="Papers" description="Academic publications in data science, agroforestry, and soil carbon.">
+  <section>
+    <div class="container--narrow">
+      <h1>Papers</h1>
+      <p class="lead mt-3">Academic publications from my previous life as an ecologist and my work in government data science.</p>
+    </div>
+  </section>
+
+  {sections.map((section, i) => (
+    <section class={i % 2 === 1 ? '' : 'alt'}>
+      <div class="container--narrow">
+        <h2>{section.heading}</h2>
+        <ol class="paper-list">
+          {section.papers.map(paper => (
+            <li>
+              {paper.url
+                ? <span>{paper.citation} <a href={paper.url} target="_blank" rel="noopener">[link]</a></span>
+                : <span>{paper.citation}</span>
+              }
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  ))}
+</Base>
+
+<style>
+  .lead {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+  }
+
+  .paper-list {
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .paper-list li {
+    line-height: 1.7;
+    color: var(--color-text);
+  }
+
+  .paper-list a {
+    color: var(--color-accent);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .paper-list a:hover {
+    text-decoration: underline;
+  }
+</style>
