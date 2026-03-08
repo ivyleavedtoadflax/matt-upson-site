@@ -1,13 +1,22 @@
 ---
 import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
 
-const archive = [
-  {
-    year: 2026,
-    posts: [
-      { title: 'Whitehall Monitor 2026: What it means for digital transformation', url: 'https://www.linkedin.com/pulse/whitehall-monitor-2026-what-means-digital-why-test-learn-upson--syxce', source: 'LinkedIn' },
-    ],
-  },
+// Get local blog posts from content collection
+const localPosts = (await getCollection('posts'))
+  .filter(p => !p.data.draft)
+  .map(p => ({
+    title: p.data.title,
+    url: `/writing/${p.id}`,
+    source: 'This site' as string,
+    date: new Date(p.data.date),
+    originalUrl: p.data.originalUrl,
+  }));
+
+// URLs of local posts (including originalUrl) to deduplicate
+const localUrls = new Set(localPosts.flatMap(p => [p.url, p.originalUrl].filter(Boolean)));
+
+const externalPosts = [
   {
     year: 2025,
     posts: [
@@ -17,7 +26,6 @@ const archive = [
   {
     year: 2024,
     posts: [
-      { title: 'Why AI projects go wrong, and what we can do about it', url: 'https://medium.com/mantisnlp/why-projects-go-wrong-and-what-we-can-do-about-it-7d43015cdabe', source: 'Medium' },
       { title: 'How we\'re thinking about Generative AI: Proprietary vs Open Source', url: 'https://medium.com/mantisnlp/how-were-thinking-about-generative-ai-proprietary-vs-open-source-3c8aff23a82b', source: 'Medium' },
       { title: 'What role can Generative Artificial Intelligence play for not-for-profits?', url: 'https://medium.com/mantisnlp/what-role-can-generative-artificial-intelligence-play-for-not-for-profits-a2a115bc1a78', source: 'Medium' },
     ],
@@ -115,13 +123,43 @@ const archive = [
     ],
   },
 ];
+
+// Filter out external posts that are now hosted locally
+const filteredExternal = externalPosts.map(group => ({
+  ...group,
+  posts: group.posts.filter(p => !localUrls.has(p.url)),
+}));
+
+// Merge local posts into the year-grouped structure
+type ArchivePost = { title: string; url: string; source: string; author?: string };
+type ArchiveGroup = { year: number; posts: ArchivePost[] };
+
+const archiveMap = new Map<number, ArchivePost[]>();
+
+// Add filtered external posts
+for (const group of filteredExternal) {
+  if (group.posts.length > 0) {
+    archiveMap.set(group.year, [...(archiveMap.get(group.year) || []), ...group.posts]);
+  }
+}
+
+// Add local posts
+for (const post of localPosts) {
+  const year = post.date.getFullYear();
+  const entry: ArchivePost = { title: post.title, url: post.url, source: post.source };
+  archiveMap.set(year, [...(archiveMap.get(year) || []), entry]);
+}
+
+const archive: ArchiveGroup[] = [...archiveMap.entries()]
+  .sort(([a], [b]) => b - a)
+  .map(([year, posts]) => ({ year, posts }));
 ---
 
 <Base title="Archive" description="Everything I've written since 2014, across Medium, Substack, government blogs, and machinegurning.blog.">
   <section>
     <div class="container--narrow">
       <h1>Archive</h1>
-      <p class="lead mt-3">Everything I&rsquo;ve written since 2014, across Medium, Substack, government blogs, and my old technical blog. For newer posts hosted here, see <a href="/writing">Writing</a>.</p>
+      <p class="lead mt-3">Everything I&rsquo;ve written since 2014, across Medium, Substack, government blogs, and my old technical blog.</p>
     </div>
   </section>
 
@@ -132,7 +170,11 @@ const archive = [
         <ul class="archive-list">
           {group.posts.map(post => (
             <li>
-              <a href={post.url} target="_blank" rel="noopener">{post.title}</a>
+              {post.source === 'This site' ? (
+                <a href={post.url}>{post.title}</a>
+              ) : (
+                <a href={post.url} target="_blank" rel="noopener">{post.title}</a>
+              )}
               <span class="source">{post.source}{post.author ? ` \u00b7 ${post.author}` : ''}</span>
             </li>
           ))}
