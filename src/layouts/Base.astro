@@ -7,9 +7,10 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  hideFooterCta?: boolean;
 }
 
-const { title, description = 'Senior AI leadership for organisations that need expertise, not hype.', ogImage = '/og-default.png' } = Astro.props;
+const { title, description = 'Senior AI leadership for organisations that need expertise, not hype.', ogImage = '/og-default.png', hideFooterCta = false } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const ogImageUrl = new URL(ogImage, Astro.site).href;
 const fullTitle = title === 'Home' ? 'Matt Upson' : `${title} | Matt Upson`;
@@ -53,6 +54,6 @@ const fullTitle = title === 'Home' ? 'Matt Upson' : `${title} | Matt Upson`;
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer hideCta={hideFooterCta} />
   </body>
 </html>
