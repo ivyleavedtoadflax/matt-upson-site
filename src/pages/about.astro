@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="About" description="The career arc from ecologist to AI consultant, via government, startups, and Valencia.">
+<Base title="About" description="The career arc from environmental scientist to AI consultant, via government, startups, and Valencia.">
   <section>
     <div class="container--narrow about-intro">
       <img src="/icon-512.png" alt="Matt Upson" class="headshot" />
@@ -18,23 +18,27 @@ import Base from '../layouts/Base.astro';
       <h2>The career arc</h2>
       <ol class="timeline">
         <li>
-          <span class="timeline-role">Data Scientist</span>
+          <span class="timeline-role">Research Fellow &amp; PhD Researcher <span class="timeline-dates">2011&ndash;2015</span></span>
+          <span class="timeline-org">Cranfield University, modelling forest growth and soil carbon storage</span>
+        </li>
+        <li>
+          <span class="timeline-role">Data Scientist <span class="timeline-dates">2015&ndash;2016</span></span>
           <span class="timeline-org">Department for Education (first data scientist recruited to the department)</span>
         </li>
         <li>
-          <span class="timeline-role">Data Scientist</span>
+          <span class="timeline-role">Data Scientist <span class="timeline-dates">2016&ndash;2018</span></span>
           <span class="timeline-org">Government Digital Service (GDS), pioneered Reproducible Analytical Pipelines</span>
         </li>
         <li>
-          <span class="timeline-role">Lead Data Scientist</span>
-          <span class="timeline-org">Juro</span>
+          <span class="timeline-role">Lead Data Scientist <span class="timeline-dates">2018&ndash;2019</span></span>
+          <span class="timeline-org">Juro, AI-enabled contract management platform</span>
         </li>
         <li>
-          <span class="timeline-role">Founder &amp; CEO, then CTO</span>
+          <span class="timeline-role">Founder &amp; CEO, then CTO <span class="timeline-dates">2021&ndash;2025</span></span>
           <span class="timeline-org">Mantis NLP, built to profitability over 5 years</span>
         </li>
         <li>
-          <span class="timeline-role">Consultant (Network Member)</span>
+          <span class="timeline-role">Consultant (Network Member) <span class="timeline-dates">2019&ndash;present</span></span>
           <span class="timeline-org">Public Digital, digital transformation for governments</span>
         </li>
         <li class="timeline-now">
@@ -48,7 +52,7 @@ import Base from '../layouts/Base.astro';
   <section>
     <div class="container--narrow">
       <h2>The human stuff</h2>
-      <p>I live in Valencia, Spain with my family. When I&rsquo;m not working, I&rsquo;m usually training for a triathlon, running along the Turia, or trying to improve my Spanish. My career path was unusual: I started as an ecologist, retrained in data science, and found my way to AI via government. That non-linear route means I bring a different perspective to most AI consultants; I understand research rigour, public interest constraints, and the gap between academic AI and production systems.</p>
+      <p>I live in Valencia, Spain with my family. When I&rsquo;m not working, I&rsquo;m usually training for a triathlon, running along the Turia, or trying to improve my Spanish. My career path was unusual: I started as an environmental scientist, retrained in data science, and found my way to AI via government. That non-linear route means I bring a different perspective to most AI consultants; I understand research rigour, public interest constraints, and the gap between academic AI and production systems.</p>
     </div>
   </section>
 
@@ -81,7 +85,7 @@ import Base from '../layouts/Base.astro';
         <a href="/papers" class="card-link">
           <div class="card">
             <h3>Academic papers</h3>
-            <p class="text-muted">Publications in data science, agroforestry, and soil carbon from my previous life as an ecologist.</p>
+            <p class="text-muted">Publications in data science, agroforestry, and soil carbon from my previous life as an environmental scientist.</p>
             <span class="read-more">View papers &rarr;</span>
           </div>
         </a>
@@ -156,6 +160,12 @@ import Base from '../layouts/Base.astro';
   .timeline-org {
     color: var(--color-text-muted);
     font-size: 0.95rem;
+  }
+
+  .timeline-dates {
+    color: var(--color-text-muted);
+    font-weight: 400;
+    font-size: 0.85rem;
   }
 
   .more-links {
