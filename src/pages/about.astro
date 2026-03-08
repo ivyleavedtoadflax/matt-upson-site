@@ -4,9 +4,12 @@ import Base from '../layouts/Base.astro';
 
 <Base title="About" description="The career arc from ecologist to AI consultant, via government, startups, and Valencia.">
   <section>
-    <div class="container--narrow">
-      <h1>About</h1>
-      <p class="lead mt-3">I&rsquo;ve spent the last decade building AI systems and leading teams in government, not-for-profits, and startups. I co-founded Mantis NLP, an AI consultancy, and served as CEO and then CTO over five years. I now work independently with organisations who need senior AI capability without the overhead of a full-time hire.</p>
+    <div class="container--narrow about-intro">
+      <img src="/matt-upson.jpg" alt="Matt Upson" class="headshot" />
+      <div>
+        <h1>About</h1>
+        <p class="lead mt-3">I&rsquo;ve spent the last decade building AI systems and leading teams in government, not-for-profits, and startups. I co-founded Mantis NLP, an AI consultancy, and served as CEO and then CTO over five years. I now work independently with organisations who need senior AI capability without the overhead of a full-time hire.</p>
+      </div>
     </div>
   </section>
 
@@ -88,6 +91,28 @@ import Base from '../layouts/Base.astro';
 </Base>
 
 <style>
+  .about-intro {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+  }
+
+  .headshot {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 600px) {
+    .about-intro {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
   .lead {
     font-size: 1.2rem;
     line-height: 1.8;
