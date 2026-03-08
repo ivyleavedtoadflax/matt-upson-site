@@ -12,6 +12,10 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+const postUrl = new URL(`/writing/${post.id}`, Astro.site).href;
+const shareText = post.data.title;
+const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(postUrl)}`;
+const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(postUrl)}`;
 ---
 
 <Base title={post.data.title} description={post.data.excerpt}>
@@ -35,8 +39,14 @@ const { Content } = await render(post);
       <Content />
     </div>
     <footer class="container--narrow post-footer">
+      <div class="share-links">
+        <span class="text-muted">Share:</span>
+        <a href={linkedInUrl} target="_blank" rel="noopener" class="share-link">LinkedIn</a>
+        <a href={twitterUrl} target="_blank" rel="noopener" class="share-link">X / Twitter</a>
+        <button class="share-link copy-link" data-url={postUrl}>Copy link</button>
+      </div>
       {post.data.originalUrl && (
-        <p class="text-muted">Originally published at <a href={post.data.originalUrl} target="_blank" rel="noopener">{new URL(post.data.originalUrl).hostname}</a></p>
+        <p class="text-muted mt-2">Originally published at <a href={post.data.originalUrl} target="_blank" rel="noopener">{new URL(post.data.originalUrl).hostname}</a></p>
       )}
       <a href="/writing" class="btn btn--outline mt-3">&larr; All writing</a>
     </footer>
@@ -117,4 +127,41 @@ const { Content } = await render(post);
     padding: 2rem 0 4rem;
     border-top: 1px solid var(--color-border);
   }
+
+  .share-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .share-link {
+    color: var(--color-accent);
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+  }
+
+  .share-link:hover {
+    text-decoration: underline;
+  }
 </style>
+
+<script>
+  document.querySelector('.copy-link')?.addEventListener('click', (e) => {
+    const btn = e.currentTarget as HTMLButtonElement;
+    const url = btn.dataset.url;
+    if (url) {
+      navigator.clipboard.writeText(url).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = original; }, 2000);
+      });
+    }
+  });
+</script>
