@@ -20,7 +20,7 @@ Defining the desired outcomes for a project seems like an obvious thing to get r
 
 Getting the right people in the room on the client side is critical so that the project actually delivers business value.
 
-We're used to working closely with technical teams, but sometimes, the business leader — who is often also the budget holder — is not close enough to the work to spot that the technical deliverables do not align with the business value that they want to get from the work.
+We're used to working closely with technical teams, but sometimes, the business leader (who is often also the budget holder) is not close enough to the work to spot that the technical deliverables do not align with the business value that they want to get from the work.
 
 Ensuring that this doesn't happen is critical, but it is also difficult, because each organisation has its own structure and politics, and it can be difficult for us to navigate that based on just a few meetings. For this reason, this critical stakeholder management is as much the responsibility of the team commissioning the work, as it is ours to get right, and we need to work together to ensure shared success.
 

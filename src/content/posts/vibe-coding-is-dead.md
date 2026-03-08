@@ -1,7 +1,7 @@
 ---
 title: "Vibe Coding is Dead: Long Live Agentic Engineering"
 date: "2026-03-06"
-excerpt: "The modern AI development stack — from Claude Code to Ralph Wiggum loops. What it takes to move from reviewing every line to supervising autonomous agents."
+excerpt: "The modern AI development stack, from Claude Code to Ralph Wiggum loops. What it takes to move from reviewing every line to supervising autonomous agents."
 tags: ["ai", "software-engineering", "agentic-engineering"]
 ---
 
@@ -51,7 +51,7 @@ Nothing new here. I use GitHub Issues exactly as I would for a human team. I wri
 
 ### 4. Review like you mean it
 
-Treat the AI like a junior engineer, not like a magic wand. It's good to think about your agent as another member of your team: it has strengths and weaknesses, and you need to incorporate it into your usual workflow. That means writing up issues, coding in pull requests, doing code review, incorporating CI/CD — all the things you'd do normally.
+Treat the AI like a junior engineer, not like a magic wand. It's good to think about your agent as another member of your team: it has strengths and weaknesses, and you need to incorporate it into your usual workflow. That means writing up issues, coding in pull requests, doing code review, incorporating CI/CD, all the things you'd do normally.
 
 Obviously don't let the AI commit straight to main. Make it open PRs. Review them. Get an AI to review too: use the biggest model you can afford for the review. Implement all the usual CI/CD checks: tests, linting, type checks, all of it. Claude has a pretty nice GitHub Action for code review, and there are many other products out there that do this too.
 
@@ -59,7 +59,7 @@ At Mantis NLP we used to have a rule that no pull request could be larger than 2
 
 Be adversarial. I've got into the habit of asking the agent, after pushing a PR, something like: "Play devil's advocate. Look at the code you've just written, pick out the worst parts, tell me what could be done better, and create GitHub issues for each one. Then iterate until complete." This works surprisingly well.
 
-I've also got into the habit of sitting with the AI and stepping through features I don't like, just asking it to create issues as we go — dragging and dropping or pasting screenshots into the CLI where needed.
+I've also got into the habit of sitting with the AI and stepping through features I don't like, just asking it to create issues as we go, dragging and dropping or pasting screenshots into the CLI where needed.
 
 ### 5. Lock it down
 
