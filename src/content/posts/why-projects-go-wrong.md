@@ -1,6 +1,6 @@
 ---
 title: "Why AI Projects Go Wrong and What We Can Do About It"
-date: "2024-01-01"
+date: "2024-09-25"
 excerpt: "Three critical failure modes from years of AI consulting: poorly defined outcomes, data issues, and lack of ongoing support. Lessons from the Mantis NLP portfolio."
 tags: ["ai", "consulting", "project-management"]
 originalUrl: "https://medium.com/mantisnlp/why-projects-go-wrong-and-what-we-can-do-about-it-7d43015cdabe"

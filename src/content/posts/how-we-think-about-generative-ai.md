@@ -1,6 +1,6 @@
 ---
 title: "How We Think About Generative AI"
-date: "2023-09-01"
+date: "2023-10-25"
 excerpt: "When to use LLMs and when not to. The journey from zero-shot prompting to fine-tuning, and why smaller models often beat GPT-4."
 tags: ["ai", "generative-ai", "strategy"]
 originalUrl: "https://medium.com/mantisnlp/how-we-think-about-generative-ai-a648e2aeb2cb"

@@ -1,6 +1,6 @@
 ---
 title: "How We're Thinking About Generative AI: Proprietary vs Open Source"
-date: "2024-02-01"
+date: "2024-01-26"
 excerpt: "The LLM pyramid: a framework for choosing between proprietary and open source models based on performance, privacy, stability, and cost."
 tags: ["ai", "generative-ai", "strategy"]
 originalUrl: "https://medium.com/mantisnlp/how-were-thinking-about-generative-ai-proprietary-vs-open-source-3c8aff23a82b"

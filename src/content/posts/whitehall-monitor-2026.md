@@ -1,6 +1,6 @@
 ---
 title: "Whitehall Monitor 2026: What It Means for Digital"
-date: "2026-01-01"
+date: "2026-01-21"
 excerpt: "The Institute for Government's annual report highlights Test, Learn and Grow as a model for evidence-led innovation. What it tells us about the state of government digital transformation."
 tags: ["government", "digital-transformation", "ai"]
 originalUrl: "https://www.linkedin.com/pulse/whitehall-monitor-2026-what-means-digital-why-test-learn-upson--syxce"

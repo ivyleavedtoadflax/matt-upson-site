@@ -1,6 +1,6 @@
 ---
 title: "Data Version Control for Reproducible Analytical Pipelines"
-date: "2022-06-01"
+date: "2022-10-17"
 excerpt: "How DVC solves one of the hardest problems in government data science: tracking changes to data when spreadsheets are the dominant data model."
 tags: ["data-science", "government", "RAP", "MLOps"]
 originalUrl: "https://medium.com/mantisnlp/data-version-control-for-reproducible-analytical-pipelines-5255782d355d"

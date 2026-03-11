@@ -1,6 +1,6 @@
 ---
 title: "How Not to Get Left Behind by AI"
-date: "2023-06-15"
+date: "2023-09-20"
 excerpt: "Three simple rules for identifying an AI pilot project in your organisation. Start small, measure impact, and build momentum."
 tags: ["ai", "consulting", "strategy"]
 originalUrl: "https://medium.com/mantisnlp/how-not-to-get-left-behind-by-ai-709f547aa5ec"
