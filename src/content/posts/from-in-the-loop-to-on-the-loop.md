@@ -3,6 +3,7 @@ title: "From In the Loop to On the Loop"
 date: "2026-03-06"
 excerpt: "Can AI coding tools move from building software that's useful for me, to building software that's useful for many people? Two projects on either side of that line."
 tags: ["ai", "software-engineering", "agentic-engineering"]
+draft: true
 ---
 
 I've been using AI to help me write code for several years now. It started with simple tools like TabNine and Copilot, which were essentially autocomplete on steroids. Even at that point they were quite transformational, especially for code where the patterns were easily repeatable. But the software I produced with them was always in the same category: _useful for me_.

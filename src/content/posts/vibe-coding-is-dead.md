@@ -3,6 +3,7 @@ title: "Vibe Coding is Dead: Long Live Agentic Engineering"
 date: "2026-03-06"
 excerpt: "The modern AI development stack, from Claude Code to Ralph Wiggum loops. What it takes to move from reviewing every line to supervising autonomous agents."
 tags: ["ai", "software-engineering", "agentic-engineering"]
+draft: true
 ---
 
 AI luminary, Andrej Karpathy, coined the term "vibe coding" about a year ago: the idea that you can describe what you want, give in to the vibes, and forget that the code even exists. He's since moved on from it. His current preferred term is "agentic engineering", and I think that's the right direction.
