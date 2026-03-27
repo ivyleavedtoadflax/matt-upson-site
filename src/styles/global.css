@@ -4,7 +4,7 @@
   --color-bg: #faf8f5;
   --color-bg-alt: #f0ece6;
   --color-text: #2c2c2c;
-  --color-text-muted: #6b6b6b;
+  --color-text-muted: #636363;
   --color-accent: #4a6754;
   --color-accent-hover: #3d5a47;
   --color-accent-light: #e8f0ea;
@@ -62,6 +62,10 @@ a:hover {
   color: var(--color-accent-hover);
 }
 
+a:visited {
+  color: var(--color-accent);
+}
+
 /* ── Layout ── */
 .container {
   max-width: var(--max-width);
@@ -103,6 +107,10 @@ section.alt {
   color: var(--color-white);
 }
 
+.btn--primary:visited {
+  color: var(--color-white);
+}
+
 .btn--primary:hover {
   background-color: var(--color-accent-hover);
   color: var(--color-white);
@@ -112,6 +120,10 @@ section.alt {
   background-color: transparent;
   color: var(--color-accent);
   border: 2px solid var(--color-accent);
+}
+
+.btn--outline:visited {
+  color: var(--color-accent);
 }
 
 .btn--outline:hover {

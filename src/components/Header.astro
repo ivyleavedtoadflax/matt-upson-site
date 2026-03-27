@@ -57,6 +57,10 @@ const navLinks = [
     text-decoration: none;
   }
 
+  .site-name:visited {
+    color: var(--color-text);
+  }
+
   .nav-links {
     display: flex;
     align-items: center;
@@ -72,8 +76,14 @@ const navLinks = [
     transition: color 0.2s;
   }
 
+  .nav-links a:visited {
+    color: var(--color-text-muted);
+  }
+
   .nav-links a:hover,
-  .nav-links a.active {
+  .nav-links a.active,
+  .nav-links a:visited:hover,
+  .nav-links a:visited.active {
     color: var(--color-accent);
   }
 
@@ -88,10 +98,10 @@ const navLinks = [
     background-color: var(--color-text);
   }
 
-  .btn--primary.btn--sm,
-  .btn--primary.btn--sm:visited,
-  .btn--primary.btn--sm:hover,
-  .btn--primary.btn--sm:active {
+  .nav-links .btn--primary.btn--sm,
+  .nav-links .btn--primary.btn--sm:visited,
+  .nav-links .btn--primary.btn--sm:hover,
+  .nav-links .btn--primary.btn--sm:active {
     color: #ffffff;
     transform: none;
   }

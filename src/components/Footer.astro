@@ -60,7 +60,12 @@ const year = new Date().getFullYear();
     font-size: 0.9rem;
   }
 
-  .footer-links a:hover {
+  .footer-links a:visited {
+    color: var(--color-text-muted);
+  }
+
+  .footer-links a:hover,
+  .footer-links a:visited:hover {
     color: var(--color-accent);
   }
 

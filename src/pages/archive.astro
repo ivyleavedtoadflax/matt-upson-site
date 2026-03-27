@@ -210,7 +210,12 @@ const archive: ArchiveGroup[] = [...archiveMap.entries()]
     transition: color 0.2s;
   }
 
-  .archive-list a:hover {
+  .archive-list a:visited {
+    color: var(--color-text);
+  }
+
+  .archive-list a:hover,
+  .archive-list a:visited:hover {
     color: var(--color-accent);
   }
 
