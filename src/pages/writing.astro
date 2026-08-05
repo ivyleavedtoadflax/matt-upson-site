@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import { url } from '../lib/url';
 
 const posts = (await getCollection('posts'))
   .filter(p => !p.data.draft)
@@ -15,7 +16,7 @@ const posts = (await getCollection('posts'))
       <p class="mt-2">
         <a href="https://reproducible.substack.com" target="_blank" rel="noopener">Subscribe on Substack &rarr;</a>
         &nbsp;&middot;&nbsp;
-        <a href="/rss.xml">RSS feed &rarr;</a>
+        <a href={url('/rss.xml')}>RSS feed &rarr;</a>
       </p>
     </div>
   </section>
@@ -24,7 +25,7 @@ const posts = (await getCollection('posts'))
     <div class="container">
       <div class="grid-2">
         {posts.map(post => (
-          <a href={`/writing/${post.id}`} class="card-link">
+          <a href={url(`/writing/${post.id}`)} class="card-link">
             <article class="card">
               <p class="text-muted" style="font-size:0.85rem;">
                 {new Date(post.data.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}
