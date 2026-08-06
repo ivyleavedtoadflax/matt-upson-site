@@ -1,0 +1,45 @@
+name: PR preview
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: pr-preview-${{ github.event.number }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    # Pull requests from forks get a read-only token, so they cannot deploy.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        if: github.event.action != 'closed'
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+        if: github.event.action != 'closed'
+
+      # The preview is served from a subpath, so the build needs a matching base
+      # for internal links and assets to resolve. See src/lib/url.ts.
+      - run: npm run build -- --base /pr-preview/pr-${{ github.event.number }}
+        if: github.event.action != 'closed'
+
+      # Deploys to gh-pages under pr-preview/pr-N/ and comments the URL on the
+      # PR. On close, removes the directory and the comment.
+      - uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: dist
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          pages-base-url: https://mattupson.com/
+          action: auto
