@@ -13,6 +13,10 @@ const recentPosts = (await getCollection('posts'))
   <!-- Hero -->
   <section class="hero">
     <div class="container hero-inner">
+      <p class="smoke-test">
+        Preview smoke test &mdash; close this PR without merging.
+        Serving from base <code>{import.meta.env.BASE_URL}</code>
+      </p>
       <h1>Senior AI leadership for organisations that need expertise, not hype.</h1>
       <p class="hero-sub">I help public sector teams, not-for-profits, and growing companies figure out what to do with AI, and then do it.</p>
       <a href="https://cal.eu/mattupson" target="_blank" rel="noopener" class="btn btn--primary">Book a call</a>
@@ -73,6 +77,15 @@ const recentPosts = (await getCollection('posts'))
 <style>
   .hero {
     padding: 6rem 0 5rem;
+  }
+
+  .smoke-test {
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+    border: 1px dashed var(--color-accent);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
   }
 
   .hero-inner {
