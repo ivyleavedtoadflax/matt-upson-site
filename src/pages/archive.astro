@@ -1,13 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import { url } from '../lib/url';
 
 // Get local blog posts from content collection
 const localPosts = (await getCollection('posts'))
   .filter(p => !p.data.draft)
   .map(p => ({
     title: p.data.title,
-    url: `/writing/${p.id}`,
+    url: url(`/writing/${p.id}`),
     source: 'This site' as string,
     date: new Date(p.data.date),
     originalUrl: p.data.originalUrl,

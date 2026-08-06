@@ -1,11 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
+import { url } from '../lib/url';
 ---
 
 <Base title="About" description="The career arc from environmental scientist to AI consultant, via government, startups, and Valencia.">
   <section>
     <div class="container--narrow about-intro">
-      <img src="/icon-512.png" alt="Matt Upson" class="headshot" />
+      <img src={url('/icon-512.png')} alt="Matt Upson" class="headshot" />
       <div>
         <h1>About</h1>
         <p class="lead mt-3">I&rsquo;ve spent the last decade building AI systems and leading teams in government, not-for-profits, and startups. I co-founded Mantis NLP, an AI consultancy, and served as CEO and then CTO over five years. I now work independently with organisations who need senior AI capability without the overhead of a full-time hire.</p>
@@ -79,14 +80,14 @@ import Base from '../layouts/Base.astro';
     <div class="container--narrow">
       <h2>More</h2>
       <div class="more-links">
-        <a href="/archive" class="card-link">
+        <a href={url('/archive')} class="card-link">
           <div class="card">
             <h3>Blog archive</h3>
             <p class="text-muted">Everything I&rsquo;ve written since 2014, across Medium, Substack, government blogs, and machinegurning.blog.</p>
             <span class="read-more">View archive &rarr;</span>
           </div>
         </a>
-        <a href="/papers" class="card-link">
+        <a href={url('/papers')} class="card-link">
           <div class="card">
             <h3>Academic papers</h3>
             <p class="text-muted">Publications in data science, agroforestry, and soil carbon from my previous life as an environmental scientist.</p>
