@@ -4,9 +4,7 @@ on:
   pull_request:
     types: [opened, reopened, synchronize, closed]
 
-permissions:
-  contents: write
-  pull-requests: write
+permissions: {}
 
 concurrency:
   group: pr-preview-${{ github.event.number }}
@@ -17,10 +15,17 @@ jobs:
     # Pull requests from forks get a read-only token, so they cannot deploy.
     if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - uses: actions/checkout@v4
+      # The preview action pushes with its own token input, so the checkout
+      # does not need to persist credentials.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         if: github.event.action != 'closed'
         with:
           node-version: 22
@@ -36,7 +41,7 @@ jobs:
 
       # Deploys to gh-pages under pr-preview/pr-N/ and comments the URL on the
       # PR. On close, removes the directory and the comment.
-      - uses: rossjrw/pr-preview-action@v1
+      - uses: rossjrw/pr-preview-action@ffa7509e91a3ec8dfc2e5536c4d5c1acdf7a6de9 # v1.8.1
         with:
           source-dir: dist
           preview-branch: gh-pages
