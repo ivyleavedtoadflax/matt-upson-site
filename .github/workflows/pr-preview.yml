@@ -46,5 +46,5 @@ jobs:
           source-dir: dist
           preview-branch: gh-pages
           umbrella-dir: pr-preview
-          pages-base-url: https://mattupson.com/
+          pages-base-url: mattupson.com
           action: auto
