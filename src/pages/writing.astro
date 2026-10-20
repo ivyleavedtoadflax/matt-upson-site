@@ -27,7 +27,7 @@ const posts = (await getCollection('posts'))
         {posts.map(post => (
           <a href={url(`/writing/${post.id}`)} class="card-link">
             <article class="card">
-              <p class="text-muted" style="font-size:0.85rem;">
+              <p class="text-muted text-sm">
                 {new Date(post.data.date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}
               </p>
               <h3>{post.data.title}</h3>
