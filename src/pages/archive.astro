@@ -165,13 +165,10 @@ const archive: ArchiveGroup[] = [...archiveMap.entries()]
     <div class="container--narrow">
       <h1>Archive</h1>
       <p class="lead mt-3">Everything I&rsquo;ve written since 2014, across Medium, Substack, government blogs, and my old technical blog.</p>
-    </div>
-  </section>
-
-  <section class="filter-bar">
-    <div class="container--narrow filters" role="radiogroup" aria-label="Filter by category">
-      <label><input type="radio" name="cat" id="f-all" checked /> All</label>
-      {cats.map(([id, label]) => <label><input type="radio" name="cat" id={`f-${id}`} /> {label}</label>)}
+      <div class="filters mt-3" role="radiogroup" aria-label="Filter by category">
+        <label><input type="radio" name="cat" id="f-all" checked /> All</label>
+        {cats.map(([id, label]) => <label><input type="radio" name="cat" id={`f-${id}`} /> {label}</label>)}
+      </div>
     </div>
   </section>
 
