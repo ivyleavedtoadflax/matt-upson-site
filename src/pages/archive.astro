@@ -3,6 +3,9 @@ import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import { url } from '../lib/url';
 
+type Cat = 'leadership' | 'government' | 'technical';
+const cats: [Cat, string][] = [['leadership', 'Leadership & strategy'], ['government', 'Government & RAP'], ['technical', 'Technical']];
+
 // Get local blog posts from content collection
 const localPosts = (await getCollection('posts'))
   .filter(p => !p.data.draft)
@@ -12,33 +15,34 @@ const localPosts = (await getCollection('posts'))
     source: 'This site' as string,
     date: new Date(p.data.date),
     originalUrl: p.data.originalUrl,
+    cat: p.data.category as Cat,
   }));
 
 // URLs of local posts (including originalUrl) to deduplicate
 const localUrls = new Set(localPosts.flatMap(p => [p.url, p.originalUrl].filter(Boolean)));
 
-const externalPosts = [
+const externalPosts: { year: number; posts: { title: string; url: string; source: string; author?: string; cat?: Cat }[] }[] = [
   {
     year: 2025,
     posts: [
-      { title: "So what's this all about then?", url: 'https://reproducible.substack.com/p/so-whats-this-all-about-then', source: 'Substack' },
+      { title: "So what's this all about then?", url: 'https://reproducible.substack.com/p/so-whats-this-all-about-then', source: 'Substack', cat: 'leadership' },
     ],
   },
   {
     year: 2024,
     posts: [
       { title: 'How we\'re thinking about Generative AI: Proprietary vs Open Source', url: 'https://medium.com/mantisnlp/how-were-thinking-about-generative-ai-proprietary-vs-open-source-3c8aff23a82b', source: 'Medium' },
-      { title: 'What role can Generative Artificial Intelligence play for not-for-profits?', url: 'https://medium.com/mantisnlp/what-role-can-generative-artificial-intelligence-play-for-not-for-profits-a2a115bc1a78', source: 'Medium' },
+      { title: 'What role can Generative Artificial Intelligence play for not-for-profits?', url: 'https://medium.com/mantisnlp/what-role-can-generative-artificial-intelligence-play-for-not-for-profits-a2a115bc1a78', source: 'Medium', cat: 'leadership' },
     ],
   },
   {
     year: 2023,
     posts: [
-      { title: 'AI for grant funding NGOs: Three ways Artificial Intelligence can help measure impact', url: 'https://medium.com/mantisnlp/ai-for-grant-funding-ngos-three-ways-artificial-intelligence-can-help-measure-impact-5938298a23ce', source: 'Medium' },
+      { title: 'AI for grant funding NGOs: Three ways Artificial Intelligence can help measure impact', url: 'https://medium.com/mantisnlp/ai-for-grant-funding-ngos-three-ways-artificial-intelligence-can-help-measure-impact-5938298a23ce', source: 'Medium', cat: 'leadership' },
       { title: 'How we think about Generative AI', url: 'https://medium.com/mantisnlp/how-we-think-about-generative-ai-a648e2aeb2cb', source: 'Medium' },
       { title: 'How not to get left behind by AI', url: 'https://medium.com/mantisnlp/how-not-to-get-left-behind-by-ai-709f547aa5ec', source: 'Medium' },
       { title: 'Deploy a cutting edge machine learning model with one line of code', url: 'https://medium.com/mantisnlp/deploy-a-cutting-edge-machine-learning-model-with-one-line-of-code-6ac1ad2f2fee', source: 'Medium' },
-      { title: 'ChatGPT for GOV.UK', url: 'https://medium.com/mantisnlp/chatgpt-for-gov-uk-c6f232dae7d', source: 'Medium' },
+      { title: 'ChatGPT for GOV.UK', url: 'https://medium.com/mantisnlp/chatgpt-for-gov-uk-c6f232dae7d', source: 'Medium', cat: 'government' },
       { title: "Why we're switching to Hugging Face Inference Endpoints, and maybe you should too", url: 'https://medium.com/mantisnlp/why-were-switching-to-hugging-face-inference-endpoints-and-maybe-you-should-too-829371dcd330', source: 'Medium' },
       { title: 'Extracting useful information from documents with Named Entity Recognition', url: 'https://medium.com/mantisnlp/extracting-useful-information-from-documents-with-named-entity-recognition-4e009b60a8c', source: 'Medium' },
     ],
@@ -63,15 +67,15 @@ const externalPosts = [
   {
     year: 2018,
     posts: [
-      { title: 'Why Government needs sustainable software too', url: 'https://www.software.ac.uk/blog/why-government-needs-sustainable-software-too', source: 'SSI' },
+      { title: 'Why Government needs sustainable software too', url: 'https://www.software.ac.uk/blog/why-government-needs-sustainable-software-too', source: 'SSI', cat: 'government' },
       { title: 'Some takeaways from Git Merge 2018', url: 'https://www.software.ac.uk/blog/some-takeaways-git-merge-2018', source: 'SSI' },
     ],
   },
   {
     year: 2017,
     posts: [
-      { title: 'Transforming the process of producing official statistics', url: 'https://dataingovernment.blog.gov.uk/2017/11/27/transforming-the-process-of-producing-official-statistics/', source: 'Data in Government' },
-      { title: 'Reproducible Analytical Pipelines', url: 'https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/', source: 'Data in Government' },
+      { title: 'Transforming the process of producing official statistics', url: 'https://dataingovernment.blog.gov.uk/2017/11/27/transforming-the-process-of-producing-official-statistics/', source: 'Data in Government', cat: 'government' },
+      { title: 'Reproducible Analytical Pipelines', url: 'https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/', source: 'Data in Government', cat: 'government' },
       { title: 'Dealing with dates', url: 'https://machinegurning.blog/rstats/dates/', source: 'machinegurning' },
       { title: 'Newyearal Networks', url: 'https://machinegurning.blog/rstats/artificial-neural-networks/', source: 'machinegurning' },
     ],
@@ -79,7 +83,7 @@ const externalPosts = [
   {
     year: 2016,
     posts: [
-      { title: 'Using machine learning to classify user comments on GOV.UK', url: 'https://dataingovernment.blog.gov.uk/2016/12/20/using-machine-learning-to-classify-user-comments-on-gov-uk/', source: 'Data in Government' },
+      { title: 'Using machine learning to classify user comments on GOV.UK', url: 'https://dataingovernment.blog.gov.uk/2016/12/20/using-machine-learning-to-classify-user-comments-on-gov-uk/', source: 'Data in Government', cat: 'government' },
       { title: 'Test Driven Development', url: 'https://machinegurning.blog/rstats/test-driven-development/', source: 'machinegurning' },
       { title: 'map_df()', url: 'https://machinegurning.blog/rstats/map_df/', source: 'machinegurning' },
       { title: 'Nearest neighbour methods', url: 'https://machinegurning.blog/rstats/nearest_neighbour_classification/', source: 'machinegurning' },
@@ -132,7 +136,7 @@ const filteredExternal = externalPosts.map(group => ({
 }));
 
 // Merge local posts into the year-grouped structure
-type ArchivePost = { title: string; url: string; source: string; author?: string };
+type ArchivePost = { title: string; url: string; source: string; author?: string; cat?: Cat };
 type ArchiveGroup = { year: number; posts: ArchivePost[] };
 
 const archiveMap = new Map<number, ArchivePost[]>();
@@ -147,7 +151,7 @@ for (const group of filteredExternal) {
 // Add local posts
 for (const post of localPosts) {
   const year = post.date.getFullYear();
-  const entry: ArchivePost = { title: post.title, url: post.url, source: post.source };
+  const entry: ArchivePost = { title: post.title, url: post.url, source: post.source, cat: post.cat };
   archiveMap.set(year, [...(archiveMap.get(year) || []), entry]);
 }
 
@@ -164,19 +168,26 @@ const archive: ArchiveGroup[] = [...archiveMap.entries()]
     </div>
   </section>
 
+  <section class="filter-bar">
+    <div class="container--narrow filters" role="radiogroup" aria-label="Filter by category">
+      <label><input type="radio" name="cat" id="f-all" checked /> All</label>
+      {cats.map(([id, label]) => <label><input type="radio" name="cat" id={`f-${id}`} /> {label}</label>)}
+    </div>
+  </section>
+
   {archive.map(group => (
     <section class={group.year % 2 === 0 ? 'alt' : ''}>
       <div class="container--narrow">
         <h2>{group.year}</h2>
         <ul class="archive-list">
           {group.posts.map(post => (
-            <li>
+            <li data-cat={post.cat ?? 'technical'}>
               {post.source === 'This site' ? (
                 <a href={post.url}>{post.title}</a>
               ) : (
                 <a href={post.url} target="_blank" rel="noopener">{post.title}</a>
               )}
-              <span class="source">{post.source}{post.author ? ` \u00b7 ${post.author}` : ''}</span>
+              <span class="source">{post.source}{post.author ? ` \u00b7 ${post.author}` : ''} &middot; {cats.find(([id]) => id === (post.cat ?? 'technical'))![1]}</span>
             </li>
           ))}
         </ul>
@@ -224,5 +235,42 @@ const archive: ArchiveGroup[] = [...archiveMap.entries()]
     display: block;
     font-size: 0.85rem;
     color: var(--color-text-muted);
+  }
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .filters label {
+    border: 1px solid var(--color-text-muted);
+    border-radius: 999px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  .filters input {
+    position: absolute;
+    opacity: 0;
+  }
+  .filters label:has(:checked) {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+  }
+  .filters label:has(:focus-visible) {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+  :global(body:has(#f-leadership:checked)) .archive-list li:not([data-cat='leadership']),
+  :global(body:has(#f-leadership:checked)) section:has(.archive-list):not(:has(li[data-cat='leadership'])) {
+    display: none;
+  }
+  :global(body:has(#f-government:checked)) .archive-list li:not([data-cat='government']),
+  :global(body:has(#f-government:checked)) section:has(.archive-list):not(:has(li[data-cat='government'])) {
+    display: none;
+  }
+  :global(body:has(#f-technical:checked)) .archive-list li:not([data-cat='technical']),
+  :global(body:has(#f-technical:checked)) section:has(.archive-list):not(:has(li[data-cat='technical'])) {
+    display: none;
   }
 </style>

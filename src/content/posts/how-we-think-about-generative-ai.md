@@ -4,6 +4,7 @@ date: "2023-10-25"
 excerpt: "When to use LLMs and when not to. The journey from zero-shot prompting to fine-tuning, and why smaller models often beat GPT-4."
 tags: ["ai", "generative-ai", "strategy"]
 originalUrl: "https://medium.com/mantisnlp/how-we-think-about-generative-ai-a648e2aeb2cb"
+category: "leadership"
 ---
 
 It's no exaggeration to say that the world has changed in the last year thanks to the developments in Generative Artificial Intelligence (AI). Models such as GPT3 and Dall-E 2 changed our expectations about what was possible from AI, much faster than anticipated by experts in the field (such as Geoffrey Hinton).

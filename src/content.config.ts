@@ -11,6 +11,7 @@ const posts = defineCollection({
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
     originalUrl: z.string().optional(),
+    category: z.enum(['leadership', 'government', 'technical']).default('technical'),
   }),
 });
 

@@ -4,6 +4,7 @@ date: "2024-01-26"
 excerpt: "The LLM pyramid: a framework for choosing between proprietary and open source models based on performance, privacy, stability, and cost."
 tags: ["ai", "generative-ai", "strategy"]
 originalUrl: "https://medium.com/mantisnlp/how-were-thinking-about-generative-ai-proprietary-vs-open-source-3c8aff23a82b"
+category: "leadership"
 ---
 
 In the second part of our series about Generative AI (you can find the [first post here](/writing/how-we-think-about-generative-ai)), we're looking at the difference between proprietary and open source Large Language Models (LLMs), and under which circumstances it makes sense to choose one over the other. This is something that we were frequently asked by clients, and this post represents some of our thinking.

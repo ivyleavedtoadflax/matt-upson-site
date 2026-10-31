@@ -4,6 +4,7 @@ date: "2026-01-21"
 excerpt: "The Institute for Government's annual report highlights Test, Learn and Grow as a model for evidence-led innovation. What it tells us about the state of government digital transformation."
 tags: ["government", "digital-transformation", "ai"]
 originalUrl: "https://www.linkedin.com/pulse/whitehall-monitor-2026-what-means-digital-why-test-learn-upson--syxce"
+category: "government"
 ---
 
 The Institute for Government's Whitehall Monitor 2026 is essential reading for anyone interested in how government works. Now in its 13th year, the report provides an annual data-driven assessment of the UK civil service covering everything from workforce size and morale to pay, diversity, and departmental spending.

@@ -4,6 +4,7 @@ date: "2023-09-20"
 excerpt: "Three simple rules for identifying an AI pilot project in your organisation. Start small, measure impact, and build momentum."
 tags: ["ai", "consulting", "strategy"]
 originalUrl: "https://medium.com/mantisnlp/how-not-to-get-left-behind-by-ai-709f547aa5ec"
+category: "leadership"
 ---
 
 The Economist recently published a piece entitled Your employer is (probably) unprepared for artificial intelligence (AI). It's a thought provoking article that considers how technologies diffuse through an economy, and the negative consequences for firms of failing to keep up with technological advances.

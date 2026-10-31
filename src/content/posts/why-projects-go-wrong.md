@@ -4,6 +4,7 @@ date: "2024-09-25"
 excerpt: "Three critical failure modes from years of AI consulting: poorly defined outcomes, data issues, and lack of ongoing support. Lessons from the Mantis NLP portfolio."
 tags: ["ai", "consulting", "project-management"]
 originalUrl: "https://medium.com/mantisnlp/why-projects-go-wrong-and-what-we-can-do-about-it-7d43015cdabe"
+category: "leadership"
 ---
 
 In the years since starting Mantis, we've worked on a lot of projects with many organisations. We're confident that we've been able to deliver value on all the projects that we have worked on, not least because our clients tell us so.

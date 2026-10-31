@@ -4,6 +4,7 @@ date: "2022-10-17"
 excerpt: "How DVC solves one of the hardest problems in government data science: tracking changes to data when spreadsheets are the dominant data model."
 tags: ["data-science", "government", "RAP", "MLOps"]
 originalUrl: "https://medium.com/mantisnlp/data-version-control-for-reproducible-analytical-pipelines-5255782d355d"
+category: "government"
 ---
 
 In a former life, I worked as a data scientist in the Government Digital Service (GDS), the UK Government agency responsible for digital transformation. When I joined GDS, I already had some experience of the difficulties of producing statistical publications from working in another Government department. We saw an opportunity to improve the way this was done across all of Government, by incorporating some practices from software development, DevOps, and data science.
